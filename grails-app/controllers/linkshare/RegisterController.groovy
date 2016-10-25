@@ -7,22 +7,23 @@ import org.springframework.security.access.annotation.Secured
 class RegisterController {
     SpringSecurityService service
 
- @Secured('IS_AUTHENTICATED_FULLY')
-def login()
-{
+    @Secured('IS_AUTHENTICATED_FULLY')
+    def login()
+    {
 
-}
-   def denied()
-   {
+    }
+    def denied()
+    {
 
-   }
+    }
     def forget()
     {
 
     }
+    @Secured("permitAll")
     def index()
     {
-
+//        render view: "/register/test"
     }
 
     def reg()
