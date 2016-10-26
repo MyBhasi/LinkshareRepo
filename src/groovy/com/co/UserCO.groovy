@@ -10,14 +10,22 @@ import javax.validation.Constraint
 class UserCO {
     String firstName
     String lastName
-    String registeredEmail
     String username
     String password
     String confirmpassword
+    byte [] photo
 
     static constraints={
         importFrom Person
         importFrom User
+        photo nullable: true
+
+        username validator: {val,obj->
+            if(User.findByUsername(val))
+            {
+                return "UserCo.property.username.unique.error"
+            }
+        }
         confirmpassword blank: false ,validator: {val,obj->
 
             if(!val?.equals(obj.password))
