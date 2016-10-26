@@ -19,6 +19,7 @@ Date dateCreated
     static constraints = {
         firstName blank: false
         lastName blank:false
+        photo nullable: true
         password validator: {val,obj->
             if(val?.equalsIgnoreCase(obj.firstName))
             {

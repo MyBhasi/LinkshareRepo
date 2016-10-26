@@ -64,7 +64,7 @@
                                     </label>
                                     <label>
                                         <g:link   controller="register" action="forget">
-                                            <button type="submit"  class="btn btn-primary">Forget Password</button>
+                                            Forget Password
                                         </g:link>
                                     </label>
                                 </div>
@@ -81,7 +81,7 @@
 
         <div class="col-lg-4 col-lg-offset-1" >
             <div class=" well bs-component">
-            <form method ="post" class="bs-component"   action="">
+            <g:form method ="post" class="bs-component"  controller="register" action="reg" >
                 <legend>Registration</legend>
                 <div class="form-group">
                     <label class="control-label" for="focusedInput">FirstName</label>
@@ -100,34 +100,35 @@
 
                 <div class="form-group has-error">
                     <label class="control-label" for="inputError">Password</label>
-                    <input type="text" class="form-control" id="inputError" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="inputError" name="password" placeholder="Password">
                 </div>
 
                 <div class="form-group has-success">
                     <label class="control-label" for="inputSuccess">Confirm Password</label>
-                    <input type="text" class="form-control" id="inputSuccess" name="confirmPassword" placeholder="ConfirmPassword">
+                    <input type="password" class="form-control" id="inputSuccess" name="confirmPassword" placeholder="ConfirmPassword">
                 </div>
 
 
                 <input class="form-group">
                     <label class="control-label" >PhotoUpload</label>
-<g:uploadForm  controller="register" action="login" >
+%{--<g:uploadForm  controller="landing" action="index" >--}%
 <input type="file" name="photo" accept="image*" id="fileupload">
-<input type="submit" class ="button"  value="upload">
-</g:uploadForm>
+%{--<input type="submit" class ="button"  value="upload">--}%
+%{--</g:uploadForm>--}%
 
                 %{--<g:uploadForm action="login">--}%
                  %{--<input type="image" id="inputSmall" name="photo">--}%
                     %{--<input type="submit" value="upload" name="upload">--}%
                     %{--</g:uploadForm>--}%
-            %{--</div>--}%
+
 
             <div class="form-group">
+
                 %{--<input type="submit"  style="width: 100px" value="Register">--}%
-                <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-        </form>
-</div>
+                <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
+        </g:form>
+            </div>
 </div>
 
 </div>
