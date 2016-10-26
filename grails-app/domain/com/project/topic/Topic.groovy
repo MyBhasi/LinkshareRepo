@@ -4,13 +4,14 @@ import com.linkingshare.User
 import com.project.person.Person
 import com.project.resource.Resource
 import com.project.subscription.Subscription
-import com.project.visibility.Visibility
+import projectEnums.Enums
 
 class Topic {
     String topicName;
     Date dateCreated
     Date lastUpdated
-    Visibility visible
+    Enums.Visibility visible
+
     static hasMany = [resources:Resource ,subscription:Subscription]
     static belongsTo = [createdbyUser:Person]
     static constraints = {

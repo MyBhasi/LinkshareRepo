@@ -1,16 +1,36 @@
 import com.linkingshare.Role
 import com.linkingshare.User
 import com.linkingshare.UserRole
+import com.project.person.Person
 
 class BootStrap {
 
+
     def init = { servletContext ->
 
-//        def user=new User("bhaskar","bhasi@09").save(failOnError: true)
-//        def role=new Role("Admin_Role").save(failOnError: true)
-//        UserRole.create(user,role)
+        Role userRole = Role.findByAuthority('ROLE_USER') ?: new Role(authority: 'ROLE_USER').save(failOnError: true, flush: true)
+        Role adminRole = Role.findByAuthority('ROLE_ADMIN') ?: new Role(authority: 'ROLE_ADMIN').save(failOnError: true, flush: true)
 
+        User adminUser=Person.findByUsername("ashish@nexthoughts.com") ?:
+                new Person(username: "ashish@nexthoughts.com", password: "ashishdefault", firstName: "Ashish", lastName: "Gautam", admin: true, enabled: true).save(failOnError: true, flush: true)
 
+        if (!adminUser.authorities.contains(adminRole)) {
+            UserRole.create(adminUser, adminRole, true)
+        }
+
+        User adminUser1=Person.findByUsername("bhaskar@nexthoughts.com") ?:
+                new Person(username: "bhaskar@nexthoughts.com", password: "bhaskardefault", firstName: "Bhaskar", lastName: "Singh", admin: true, enabled: true).save(failOnError: true, flush: true)
+
+        if (!adminUser1.authorities.contains(adminRole)) {
+            UserRole.create(adminUser1, adminRole, true)
+        }
+
+        User userUser=Person.findByUsername("lalu@nexthoughts.com") ?:
+                new Person(username: "lalu@nexthoughts.com", password: "laludefault", firstName: "Lalu", lastName: "Yadav", admin: false, enabled: true).save(failOnError: true, flush: true)
+
+        if (!userUser.authorities.contains(userRole)) {
+            UserRole.create(userUser, userRole, true)
+        }
     }
     def destroy = {
     }
