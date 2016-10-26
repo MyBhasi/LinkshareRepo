@@ -10,7 +10,6 @@ import javax.validation.Constraint
 class UserCO {
     String firstName
     String lastName
-    String registeredEmail
     String username
     String password
     String confirmpassword

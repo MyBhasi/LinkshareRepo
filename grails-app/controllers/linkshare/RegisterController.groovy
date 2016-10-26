@@ -6,9 +6,11 @@ import com.regservice.RegisterService
 import grails.plugin.springsecurity.SpringSecurityService
 import org.springframework.security.access.annotation.Secured
 
+import javax.imageio.spi.RegisterableService
+
 class RegisterController {
     SpringSecurityService service
-    RegisterService registerService
+    RegisterService  registerService
     @Secured('IS_AUTHENTICATED_FULLY')
     def login()
     {
@@ -28,11 +30,11 @@ class RegisterController {
 //        render view: "/register/test"
     }
 
-    def reg(UserCO userco)
+    def reg(UserCO userCOo)
     {
-if (userco.validate())
-{
-registerService.regserviceMethod(params)
-}
+
+boolean flag= registerService.regserviceMethod(userCo)
+
+
     }
 }

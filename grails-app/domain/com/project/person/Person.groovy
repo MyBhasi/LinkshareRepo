@@ -14,7 +14,6 @@ String lastName
 Date dateCreated
     Date lastUpdated
     boolean admin
-  String registeredemail
  static hasMany = [topics:Topic,resource:Resource,readingItem:ReadingItem,resourcerating:ResourceRating]
 
     static constraints = {

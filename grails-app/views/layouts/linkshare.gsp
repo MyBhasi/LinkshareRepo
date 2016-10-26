@@ -17,7 +17,8 @@
 </head>
 <body >
 <div id="header">
-    <h1>LinkShare </div>
+    <h1>LinkShare<h1>
+</div>
 <g:layoutBody/>
 %{--<div id="footer">FOOTER</div>--}%
 </body>
