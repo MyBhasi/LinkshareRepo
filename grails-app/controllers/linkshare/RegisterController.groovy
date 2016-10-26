@@ -30,11 +30,17 @@ class RegisterController {
 //        render view: "/register/test"
     }
 
-    def reg(UserCO userCOo)
+    def reg(UserCO userCO)
     {
 
 boolean flag= registerService.regserviceMethod(userCo)
-
+        if(flag)
+        {
+           render ( controller:"" ,view:"",model:[])
+        }
+else {
+            render "you entered anything wrong"
+        }
 
     }
 }
