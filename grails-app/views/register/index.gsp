@@ -9,7 +9,8 @@
 <html>
 <head>
     <meta name="layout" content='loginlay'>
-    <h1 class="text-center"> <b><font size="10"> LinkShare</font></b></h1>>
+    <h1 class="text-center"> <b><font size="10"> LinkShare</font></b></h1>
+
     %{--<style type="text/css">--}%
 
 %{--#submit{--}%
@@ -40,22 +41,31 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="well bs-component">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="post" action=""${resource(file: 'j_spring_security_check')}">
                     <fieldset>
                         <legend>Login</legend>
                         <div class="form-group">
                             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
                             <div class="col-lg-10">
-                                <input type="text" class="form-control" id="inputEmail" placeholder="Email">
+                                <input type="text"  name='j_username' class="form-control" id="inputEmail" placeholder="Email">
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
                             <div class="col-lg-10">
-                                <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+                                <input type="password" class="form-control"  name='j_passsword' id="inputPassword" placeholder="Password">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="submit"  value="login">
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                    </label><br>
+                                    <label>
+                                        <button type="submit"  class="btn btn-primary">Sign In</button>
+
+                                    </label>
+                                    <label>
+                                        <g:link   controller="register" action="forget">
+                                            <button type="submit"  class="btn btn-primary">Forget Password</button>
+                                        </g:link>
                                     </label>
                                 </div>
                             </div>
@@ -67,9 +77,12 @@
                 </form>
             </div>
         </div>
-        <div class="col-lg-4 col-lg-offset-1">
 
-            <form class="bs-component"   action="">
+
+        <div class="col-lg-4 col-lg-offset-1" >
+            <div class=" well bs-component">
+            <form method ="post" class="bs-component"   action="">
+                <legend>Registration</legend>
                 <div class="form-group">
                     <label class="control-label" for="focusedInput">FirstName</label>
                     <input class="form-control" id="focusedInput" type="text" name="firstName" placeholder="FirstName">
@@ -110,19 +123,20 @@
             %{--</div>--}%
 
             <div class="form-group">
-                <input type="submit"  style="width: 100px" value="Register">
+                %{--<input type="submit"  style="width: 100px" value="Register">--}%
+                <button type="submit" class="btn btn-primary">Submit</button>
     </div>
         </form>
+</div>
+</div>
 
-    </div>
-</h1>
 </div>
 
 
 
 
-
-
+<script src="${resource(dir:'js/theme',file:"bootstrap.min.js")}"/>
+<script src="${resource(dir:'js/theme',file:"custom.js")}"/>
 
 
 

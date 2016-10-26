@@ -20,8 +20,5 @@
 </head>
 <body>
 <g:layoutBody/>
-
-<script src="${resource(dir:'js/theme',file:"bootstrap.min.js")}"/>
-<script src="${resource(dir:'js/theme',file:"custom.js")}"/>
 </body>
 </html>
