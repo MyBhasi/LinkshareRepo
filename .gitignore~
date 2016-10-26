@@ -6,9 +6,6 @@
 # web application files
 /web-app/WEB-INF/classes
 
-# web application files
-/out/production
-
 # default HSQL database files for production mode
 /prodDb.*
 
@@ -34,9 +31,6 @@
 
 # "temporary" build files
 /target
-
-LinkingShare.iml
-
 Contact GitHub 
 
 /.idea
