@@ -6,6 +6,7 @@ import org.codehaus.groovy.grails.validation.Validateable
 class TopicCO {
     String topicName
     String description
+    String visibility
 
     static constraints= {
 

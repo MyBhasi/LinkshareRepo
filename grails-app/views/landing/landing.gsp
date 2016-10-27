@@ -11,7 +11,7 @@
 <div class="row">
     <div class="col-lg-6">
         <div class="well bs-component">
-            <form class="form-horizontal">
+            <g:form class="form-horizontal" controller="topic" action="creatTopic">
                 <fieldset>
                     <legend>Create Topic</legend>
 
@@ -37,8 +37,8 @@
                         <label for="textArea" class="col-lg-2 control-label">Visibility</label>
 
                         <div class="col-lg-10">
-                            <g:select name="visibility" from="${}" optionKey=""
-                                      optionValue="" noSelection="['': 'choose visibility']"></g:select>
+                            <g:select name="visibility" from="${projectEnums.Enums.Visibility.allVisibility()}"
+                                      noSelection="['': 'Select visibility']"></g:select>
 
                             %{--<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>--}%
                         </div>
@@ -51,7 +51,7 @@
                         </div>
                     </div>
                 </fieldset>
-            </form>
+            </g:form>
         </div>
     </div>
 </div>
