@@ -20,7 +20,7 @@ class Person extends User {
     static constraints = {
         firstName blank: false
         lastName blank: false
-        password  validator: { val, obj ->
+        password validator: { val, obj ->
             if (val?.equalsIgnoreCase(obj.firstName)) {
                 return false
             }

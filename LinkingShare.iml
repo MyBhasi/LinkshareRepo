@@ -37,9 +37,7 @@
     </facet>
     <facet type="hibernate" name="Hibernate">
       <configuration>
-        <datasource-map>
-          <unit-entry name="Gorm" />
-        </datasource-map>
+        <datasource-map />
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -117,6 +115,5 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="LinkingShare-grailsPlugins" />
-    <orderEntry type="library" name="groovy-2.4.7" level="application" />
   </component>
 </module>

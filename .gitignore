@@ -18,6 +18,9 @@
 # web application files
 /out/production
 
+# web application files
+/out/production
+
 # default HSQL database files for production mode
 /prodDb.*
 

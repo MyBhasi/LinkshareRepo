@@ -12,7 +12,7 @@ class Topic {
     Date lastUpdated
     Enums.Visibility visible
 
-    static hasMany = [resources:Resource ,subscriptions:Subscription]
+    static hasMany = [resources:Resource ,subscription:Subscription]
     static belongsTo = [createdbyUser:Person]
     static constraints = {
         topicName blank: false,unique: true
@@ -20,6 +20,6 @@ class Topic {
     }
     static mapping = {
         resources cascade: 'delete'
-        subscriptions cascade: 'delete'
+        subscription cascade: 'delete'
     }
 }
