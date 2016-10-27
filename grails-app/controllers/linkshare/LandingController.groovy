@@ -1,9 +1,15 @@
 package linkshare
 
+import org.springframework.security.access.annotation.Secured
+
+@Secured('permitAll')
 class LandingController {
 
-    def index() {
+    def index() {}
 
-        render "data saved"
+
+    def postLogin() {
+
+        render(view: "landing")
     }
 }

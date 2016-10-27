@@ -12,4 +12,9 @@ class Enums {
     enum Seriousness {
         CASUAL, SERIOUS, VERYSERIOUS
     }
+
+    public visibilityList() {
+       List<Visibility> list= [Visibility.PUBLIC, Visibility.PRIVATE]
+        return list
+    }
 }
