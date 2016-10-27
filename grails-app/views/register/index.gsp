@@ -59,7 +59,7 @@
 
         <div class="col-lg-4 col-lg-offset-1" >
             <div class=" well bs-component">
-            <g:form method ="post" class="bs-component"  controller="register" action="reg" >
+            <g:form method ="post" class="bs-component"  controller="register" action="submit" >
                 <legend>Registration</legend>
                 <div class="form-group">
                     <label class="control-label" for="focusedInput">FirstName</label>

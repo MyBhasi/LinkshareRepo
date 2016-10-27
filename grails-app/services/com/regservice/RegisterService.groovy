@@ -1,6 +1,9 @@
 package com.regservice
 
 import com.co.UserCO
+import com.linkingshare.Role
+import com.linkingshare.User
+import com.linkingshare.UserRole
 import com.project.person.Person
 
 import javax.transaction.Transactional
@@ -15,7 +18,10 @@ class RegisterService {
 
 
 println "service"
-            new Person(username: userCO.username,password: userCO.password,firstName: userCO.firstName,lastName: userCO.lastName,photo: userCO.photo,admin: false).save(failOnError: true)
+           User user = new Person(username: userCO.username,password: userCO.password,firstName: userCO.firstName,lastName: userCO.lastName,photo: userCO.photo,admin: false).save(failOnError: true)
+
+Role role=new Role(authority: "Role_User").save(failOnError: true)
+            UserRole.create(user,role,true)
 
             return true}
 

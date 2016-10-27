@@ -31,17 +31,10 @@ render "forget password"
 //        render view: "/register/test"
     }
 @Secured("permitAll")
-    def reg(UserCO userCO)
+    def submit()
     {
-println "${userCO.firstName}"
-boolean flag= registerService.regServiceMethod(UserCO)
-        if(flag)
-        {
-           render ( controller:"landing" ,view:"index")
-        }
-else {
-            render "you entered anything wrong"
-        }
+redirect (controller:"user",action:"save")
+
 
     }
 }
