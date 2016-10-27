@@ -4,14 +4,15 @@ import com.linkingshare.User
 import com.project.person.Person
 import com.project.resource.Resource
 import com.project.subscription.Subscription
-import com.project.visibility.Visibility
+import projectEnums.Enums
 
 class Topic {
     String topicName;
     Date dateCreated
     Date lastUpdated
-    Visibility visible
-    static hasMany = [resources:Resource ,subscription:Subscription]
+    Enums.Visibility visible
+
+    static hasMany = [resources:Resource ,subscriptions:Subscription]
     static belongsTo = [createdbyUser:Person]
     static constraints = {
         topicName blank: false,unique: true
@@ -19,6 +20,6 @@ class Topic {
     }
     static mapping = {
         resources cascade: 'delete'
-        subscription cascade: 'delete'
+        subscriptions cascade: 'delete'
     }
 }

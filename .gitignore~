@@ -4,19 +4,7 @@
 # to generate your .gitignore file.
 
 # web application files
-/web-app/WEB-INF/class
-# classes files
-/out/production/linkshare
-/out/production/linkshare-grailsPlugins
-/test/unit/linkshare
- /web-app/fonts/
- /web-app/js/theme/
-/ web-app/images/theme
-/ web-app/fonts/
-/test/unit/person/
-
-# web application files
-/out/production
+/web-app/WEB-INF/classes
 
 # default HSQL database files for production mode
 /prodDb.*
@@ -43,9 +31,6 @@
 
 # "temporary" build files
 /target
-
-LinkingShare.iml
-
 Contact GitHub 
 
 /.idea

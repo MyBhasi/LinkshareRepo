@@ -34,7 +34,7 @@ render "forget password"
     def reg(UserCO userCO)
     {
 println "${userCO.firstName}"
-boolean flag= registerService.regserviceMethod(userCO)
+boolean flag= registerService.regServiceMethod(UserCO)
         if(flag)
         {
            render ( controller:"landing" ,view:"index")

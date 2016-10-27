@@ -11,32 +11,10 @@
     <meta name="layout" content='loginlay'>
     <h1 class="text-center"> <b><font size="10"> LinkShare</font></b></h1>
 
-    %{--<style type="text/css">--}%
-
-%{--#submit{--}%
-    %{--align-self: center;--}%
-%{--}--}%
-
-        %{--label--}%
-        %{--{--}%
-         %{--float: left;--}%
-         %{--width: 65px;--}%
-        %{--}--}%
-
-    %{--</style>--}%
-   %{--<meta name="layout" content="linkshare">--}%
     <title></title>
 </head>
 
 <body>
-%{--<div class="bs-docs-section">--}%
-    %{--<div class="row">--}%
-        %{--<div class="col-lg-6">--}%
-            %{--<div class="page-header">--}%
-                %{--<h1 id="forms">Login</h1>--}%
-            %{--</div>--}%
-        %{--</div>--}%
-    %{--</div>--}%
 
     <div class="row">
         <div class="col-lg-6">
@@ -132,58 +110,7 @@
 </div>
 
 </div>
-
-
-
-
 <script src="${resource(dir:'js/theme',file:"bootstrap.min.js")}"/>
-<script src="${resource(dir:'js/theme',file:"custom.js")}"/>
-
-
-
-
-
-
-
-%{--//old form--}%
-%{--<h1>login</h1>--}%
-%{--<form method="post" action="${resource(file: 'j_spring_security_check')}">--}%
-    %{--<div style="width: 220px" id="form">--}%
- %{--<label>UserName</label>--}%
-    %{--<input type="text" name="j_username" id="username"/>--}%
-    %{--<br>--}%
-    %{--<label>Password</label>--}%
-    %{--<input type="password" name="j_password" id="password"/>--}%
-    %{--<br>--}%
-        %{--<input type="submit" value="login" id="login"/>--}%
-     %{--<g:link  action="login" >--}%
-         %{--forgetpassword--}%
-     %{--</g:link>--}%
-    %{--</div>--}%
-
- %{--</form>--}%
-%{--<h2>Registration</h2>--}%
-%{--<g:form method="post"  controller="register" action="login.gsp">--}%
-%{--<label>FirstName</label><br>--}%
-%{--<input type="text" name="firstName" id="firstName"/>--}%
-%{--<br>--}%
-%{--<label>LastName</label><br>--}%
-%{--<input type="text" name="lastName" id="lastName"/>--}%
-%{--<br>--}%
-%{--<label>RegisteredEmail</label><br>--}%
-%{--<input type="text" name="registeredemail" id="registeredemail"/><br>--}%
-%{--<label>UserName</label><br>--}%
-%{--<input type="text" name="username" id="u"/><br>--}%
-%{--<label>Password</label><br>--}%
-%{--<input type="text" name="password" id="p"/><br>--}%
-%{--<label>ConfirmPassword</label><br>--}%
-%{--<input type="text" name="confirmpassword" id="confirmpassword"/><br>--}%
-%{--<g:uploadForm  controller="register" action="login" >--}%
-    %{--<label>photo</label><br>--}%
-        %{--<input type="file" name="photo" accept="image*" id="fileupload">--}%
-%{--<input type="submit" class ="button"  value="upload">--}%
-    %{--</g:uploadForm><br>--}%
-%{--<input type="submit"  id="submit"   value="Register">--}%
-%{--</g:form>--}%
+<script src="${resource(dir:'js/theme',file:"custom.js")}
 </body>
 </html>

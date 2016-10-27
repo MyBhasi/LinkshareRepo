@@ -2,12 +2,13 @@ package com.regservice
 
 import com.co.UserCO
 import com.project.person.Person
-import grails.transaction.Transactional
+
+import javax.transaction.Transactional
 
 @Transactional
 class RegisterService {
 
-    def regserviceMethod(UserCO userCO) {
+    def regServiceMethod(UserCO userCO) {
         println "hello"
         if(userCO.validate())
         {
