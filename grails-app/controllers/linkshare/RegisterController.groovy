@@ -20,21 +20,28 @@ class RegisterController {
     {
 
     }
+    @Secured("permitAll")
     def forget()
     {
-
+render "forget password"
     }
     @Secured("permitAll")
     def index()
     {
 //        render view: "/register/test"
     }
-
-    def reg(UserCO userCOo)
+@Secured("permitAll")
+    def reg(UserCO userCO)
     {
-
-boolean flag= registerService.regserviceMethod(userCo)
-
+println "${userCO.firstName}"
+boolean flag= registerService.regServiceMethod(UserCO)
+        if(flag)
+        {
+           render ( controller:"landing" ,view:"index")
+        }
+else {
+            render "you entered anything wrong"
+        }
 
     }
 }

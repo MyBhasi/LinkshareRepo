@@ -12,7 +12,7 @@ class UserCO {
     String lastName
     String username
     String password
-    String confirmpassword
+    String confirmPassword
     byte [] photo
 
     static constraints={
@@ -25,14 +25,22 @@ class UserCO {
             {
                 return "UserCo.property.username.unique.error"
             }
+            else
+            {
+                return true
+            }
         }
-        confirmpassword blank: false ,validator: {val,obj->
+        confirmPassword blank: false ,validator: {val,obj->
 
             if(!val?.equals(obj.password))
             {
                 return "UserCo.property.confirmpassword.error"
             }
 
+            else
+            {
+                true
+            }
         }
 
     }

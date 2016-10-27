@@ -4,7 +4,19 @@
 # to generate your .gitignore file.
 
 # web application files
-/web-app/WEB-INF/classes
+/web-app/WEB-INF/class
+# classes files
+/out/production/linkshare
+/out/production/linkshare-grailsPlugins
+/test/unit/linkshare
+ /web-app/fonts/
+ /web-app/js/theme/
+/ web-app/images/theme
+/ web-app/fonts/
+/test/unit/person/
+
+# web application files
+/out/production
 
 # web application files
 /out/production

@@ -11,32 +11,10 @@
     <meta name="layout" content='loginlay'>
     <h1 class="text-center"> <b><font size="10"> LinkShare</font></b></h1>
 
-    %{--<style type="text/css">--}%
-
-%{--#submit{--}%
-    %{--align-self: center;--}%
-%{--}--}%
-
-        %{--label--}%
-        %{--{--}%
-         %{--float: left;--}%
-         %{--width: 65px;--}%
-        %{--}--}%
-
-    %{--</style>--}%
-   %{--<meta name="layout" content="linkshare">--}%
     <title></title>
 </head>
 
 <body>
-%{--<div class="bs-docs-section">--}%
-    %{--<div class="row">--}%
-        %{--<div class="col-lg-6">--}%
-            %{--<div class="page-header">--}%
-                %{--<h1 id="forms">Login</h1>--}%
-            %{--</div>--}%
-        %{--</div>--}%
-    %{--</div>--}%
 
     <div class="row">
         <div class="col-lg-6">
@@ -64,7 +42,7 @@
                                     </label>
                                     <label>
                                         <g:link   controller="register" action="forget">
-                                            <button type="submit"  class="btn btn-primary">Forget Password</button>
+                                            Forget Password
                                         </g:link>
                                     </label>
                                 </div>
@@ -81,7 +59,7 @@
 
         <div class="col-lg-4 col-lg-offset-1" >
             <div class=" well bs-component">
-            <form method ="post" class="bs-component"   action="">
+            <g:form method ="post" class="bs-component"  controller="register" action="reg" >
                 <legend>Registration</legend>
                 <div class="form-group">
                     <label class="control-label" for="focusedInput">FirstName</label>
@@ -100,89 +78,39 @@
 
                 <div class="form-group has-error">
                     <label class="control-label" for="inputError">Password</label>
-                    <input type="text" class="form-control" id="inputError" name="password" placeholder="Password">
+                    <input type="password" class="form-control" id="inputError" name="password" placeholder="Password">
                 </div>
 
                 <div class="form-group has-success">
                     <label class="control-label" for="inputSuccess">Confirm Password</label>
-                    <input type="text" class="form-control" id="inputSuccess" name="confirmPassword" placeholder="ConfirmPassword">
+                    <input type="password" class="form-control" id="inputSuccess" name="confirmPassword" placeholder="ConfirmPassword">
                 </div>
 
 
                 <input class="form-group">
                     <label class="control-label" >PhotoUpload</label>
-<g:uploadForm  controller="register" action="login" >
+%{--<g:uploadForm  controller="landing" action="index" >--}%
 <input type="file" name="photo" accept="image*" id="fileupload">
-<input type="submit" class ="button"  value="upload">
-</g:uploadForm>
+%{--<input type="submit" class ="button"  value="upload">--}%
+%{--</g:uploadForm>--}%
 
                 %{--<g:uploadForm action="login">--}%
                  %{--<input type="image" id="inputSmall" name="photo">--}%
                     %{--<input type="submit" value="upload" name="upload">--}%
                     %{--</g:uploadForm>--}%
-            %{--</div>--}%
+
 
             <div class="form-group">
+
                 %{--<input type="submit"  style="width: 100px" value="Register">--}%
-                <button type="submit" class="btn btn-primary">Submit</button>
-    </div>
-        </form>
-</div>
-</div>
-
+                <button type="submit" class="btn btn-primary" >Submit</button>
+      </div>
+        </g:form>
+            </div>
 </div>
 
-
-
-
+</div>
 <script src="${resource(dir:'js/theme',file:"bootstrap.min.js")}"/>
-<script src="${resource(dir:'js/theme',file:"custom.js")}"/>
-
-
-
-
-
-
-
-%{--//old form--}%
-%{--<h1>login</h1>--}%
-%{--<form method="post" action="${resource(file: 'j_spring_security_check')}">--}%
-    %{--<div style="width: 220px" id="form">--}%
- %{--<label>UserName</label>--}%
-    %{--<input type="text" name="j_username" id="username"/>--}%
-    %{--<br>--}%
-    %{--<label>Password</label>--}%
-    %{--<input type="password" name="j_password" id="password"/>--}%
-    %{--<br>--}%
-        %{--<input type="submit" value="login" id="login"/>--}%
-     %{--<g:link  action="login" >--}%
-         %{--forgetpassword--}%
-     %{--</g:link>--}%
-    %{--</div>--}%
-
- %{--</form>--}%
-%{--<h2>Registration</h2>--}%
-%{--<g:form method="post"  controller="register" action="login.gsp">--}%
-%{--<label>FirstName</label><br>--}%
-%{--<input type="text" name="firstName" id="firstName"/>--}%
-%{--<br>--}%
-%{--<label>LastName</label><br>--}%
-%{--<input type="text" name="lastName" id="lastName"/>--}%
-%{--<br>--}%
-%{--<label>RegisteredEmail</label><br>--}%
-%{--<input type="text" name="registeredemail" id="registeredemail"/><br>--}%
-%{--<label>UserName</label><br>--}%
-%{--<input type="text" name="username" id="u"/><br>--}%
-%{--<label>Password</label><br>--}%
-%{--<input type="text" name="password" id="p"/><br>--}%
-%{--<label>ConfirmPassword</label><br>--}%
-%{--<input type="text" name="confirmpassword" id="confirmpassword"/><br>--}%
-%{--<g:uploadForm  controller="register" action="login" >--}%
-    %{--<label>photo</label><br>--}%
-        %{--<input type="file" name="photo" accept="image*" id="fileupload">--}%
-%{--<input type="submit" class ="button"  value="upload">--}%
-    %{--</g:uploadForm><br>--}%
-%{--<input type="submit"  id="submit"   value="Register">--}%
-%{--</g:form>--}%
+<script src="${resource(dir:'js/theme',file:"custom.js")}
 </body>
 </html>
