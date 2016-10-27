@@ -10,9 +10,10 @@ class Topic {
     String topicName;
     Date dateCreated
     Date lastUpdated
-    Enums.Visibility visible
+    String description
+    Enums.Visibility visiblility
 
-    static hasMany = [resources:Resource ,subscription:Subscription]
+    static hasMany = [resources:Resource ,subscriptions:Subscription]
     static belongsTo = [createdbyUser:Person]
     static constraints = {
         topicName blank: false,unique: true
@@ -20,6 +21,6 @@ class Topic {
     }
     static mapping = {
         resources cascade: 'delete'
-        subscription cascade: 'delete'
+        subscriptions cascade: 'delete'
     }
 }
