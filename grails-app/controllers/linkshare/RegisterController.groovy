@@ -1,16 +1,14 @@
 package linkshare
 
 import com.co.UserCO
-import com.project.person.Person
 import com.regservice.RegisterService
 import grails.plugin.springsecurity.SpringSecurityService
 import org.springframework.security.access.annotation.Secured
 
-import javax.imageio.spi.RegisterableService
-
 class RegisterController {
     SpringSecurityService service
     RegisterService  registerService
+
     @Secured('IS_AUTHENTICATED_FULLY')
     def login()
     {
@@ -37,7 +35,7 @@ println "${userCO.firstName}"
 boolean flag= registerService.regServiceMethod(UserCO)
         if(flag)
         {
-           render ( controller:"landing" ,view:"index")
+           render ( controller:"landing" ,view:"/landing/index")
         }
 else {
             render "you entered anything wrong"

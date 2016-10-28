@@ -3,8 +3,14 @@
 <head>
     <title><g:layoutTitle></g:layoutTitle></title>
 
-    <link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'bootstrap.css')}" type="text/css">
-    <link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'custom.min.css')}" type="text/css">
+    %{--<link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'bootstrap.css')}" type="text/css">--}%
+    %{--<link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'custom.min.css')}" type="text/css">--}%
+
+    <asset:javascript src="theme/bootstrap.min.js"/>
+    <asset:javascript src="theme/custom.js"/>
+    <asset:stylesheet href="theme/bootstrap.css"/>
+    <asset:stylesheet href="theme/custom.min.css"/>
+
 
     <g:layoutHead/>
 

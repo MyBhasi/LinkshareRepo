@@ -123,9 +123,10 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.linkingshare.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.linkingshare.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.linkingshare.Role'
+
 grails.plugin.springsecurity.auth.loginFormUrl = '/register/index'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl="/register/login"
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/error'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/landing/index'
+//grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/error'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],

@@ -17,10 +17,11 @@ class TopicService {
 
         if (!Topic.findByTopicName(topicCO.topicName)) {
             if (topicCO.validate()) {
-                Topic topic=new Topic(topicName: topicCO.topicName, visiblility: topicCO.visibility )
+                Person person = springSecurityService.currentUser
+
+                Topic topic = new Topic(topicName: topicCO.topicName, visiblility: topicCO.visibility, createdbyUser: person, description: topicCO.description)
                 topic.save(failOnError: true, flush: true)
 
-                Person person=springSecurityService.currentUser
                 person.addToTopics(topic)
                 person.save(flush: true)
             }
