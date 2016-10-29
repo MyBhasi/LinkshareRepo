@@ -90,12 +90,14 @@ grails.hibernate.osiv.readonly = false
 environments {
     development {
         grails.logging.jul.usebridge = true
+
+        }
     }
     production {
         grails.logging.jul.usebridge = false
         // TODO: grails.serverURL = "http://www.changeme.com"
     }
-}
+
 
 // log4j configuration
 log4j.main = {
@@ -124,8 +126,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.linkingshare.
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.linkingshare.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.linkingshare.Role'
 grails.plugin.springsecurity.auth.loginFormUrl = '/register/index'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl="/register/login"
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/error'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/landing/postLogin'
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/register/index'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],
@@ -137,3 +139,16 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/favicon.ico':  ['permitAll']
 ]
 
+grails {
+    mail {
+        host = "smtp.gmail.com"
+        port = 465
+        username = "ksubhash970@gmail.com"
+        password = "subhash970"
+        props = ["mail.smtp.auth"                  : "true",
+                 "mail.smtp.socketFactory.port"    : "465",
+                 "mail.smtp.socketFactory.class"   : "javax.net.ssl.SSLSocketFactory",
+                 "mail.smtp.socketFactory.fallback": "false"]
+
+    }
+}

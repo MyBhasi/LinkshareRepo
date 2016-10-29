@@ -2,18 +2,26 @@ package linkshare
 
 import com.co.UserCO
 import com.regservice.RegisterService
+import grails.plugin.springsecurity.annotation.Secured
+import org.springframework.web.multipart.MultipartFile
+import org.springframework.web.multipart.MultipartHttpServletRequest
 
+@Secured('permitAll')
 class UserController {
 RegisterService registerService
     def index() { }
-    def save(UserCO  userCO){
-        boolean flag= registerService.regServiceMethod(UserCO)
+    def save(UserCO userCO){
+        println "joker"
+        MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;
+        def file=mpr.getFile('photo')
+        boolean flag= registerService.regServiceMethod(userCO,file)
         if(flag)
         {
-            render ( controller:"landing" ,view:"index")
+            render (view: '/landing/landing')
         }
         else {
-            render "you entered anything wrong"
+
+            render  (view:"/register/index" ,model: [error: "Any field is Left Empty or mismatch password"])
         }
     }
 }
