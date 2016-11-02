@@ -15,6 +15,7 @@ class Topic {
 
     static hasMany = [resources:Resource ,subscriptions:Subscription]
     static belongsTo = [createdbyUser:Person]
+
     static constraints = {
         topicName blank: false,unique: true
 

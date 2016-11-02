@@ -14,25 +14,10 @@ class TopicService {
     }
 
     def createMethod(TopicCO topicCO) {
-
-        if (!Topic.findByTopicName(topicCO.topicName)) {
-            if (topicCO.validate()) {
-                Person person = springSecurityService.currentUser
-
-                Topic topic = new Topic(topicName: topicCO.topicName, visiblility: topicCO.visibility, createdbyUser: person, description: topicCO.description)
-                topic.save(failOnError: true, flush: true)
-
-                person.addToTopics(topic)
-                person.save(flush: true)
-            }
-            else{
-                topicCO.errors.allErrors.each {err ->
-                    println(err)
-                }
-            }
-        }
-        else {
-            println("Topic already created")
-        }
+        Person person = springSecurityService.currentUser
+        Topic topic = new Topic(topicName: topicCO.topicName, visiblility: topicCO.visibility, createdbyUser: person, description: topicCO.description)
+        topic.save(failOnError: true, flush: true)
+        person.addToTopics(topic)
+        person.save(flush: true)
     }
 }

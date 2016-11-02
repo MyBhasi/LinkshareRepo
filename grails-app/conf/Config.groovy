@@ -124,8 +124,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.linkingshare.
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.linkingshare.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.linkingshare.Role'
 
-grails.plugin.springsecurity.auth.loginFormUrl = '/register/index'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl='/landing/index'
+grails.plugin.springsecurity.auth.loginFormUrl = '/landing/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/admin/postLogin'
 //grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/error'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
