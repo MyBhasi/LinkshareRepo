@@ -1,21 +1,19 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: anuj
-  Date: 2/11/16
-  Time: 8:30 AM
---%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
 <%@ page import="com.project.topic.Topic" %>
 <html>
 <head>
-    <meta name="layout" content="land"/>
+    <meta name="layout" content="linkshare"/>
     <title></title>
 </head>
 
 <body>
+<div class="container-fluid">
 <div class="row">
-<div class="col-lg-6">
+    <div class="col-md-3">
+        <g:render template="/dashboard/sideBar"></g:render>
+    </div>
+<div class="col-lg-5">
     <div class="well bs-component">
         %{--<g:hasErrors bean="" "${err}" field="">--}%
             %{--"${error}"--}%
@@ -65,9 +63,9 @@
         </g:form>
     </div>
 </div>
-</div>
-<div class="row">
-<div class="col-lg-6">
+
+%{--<div class="row">--}%
+<div class="col-lg-5 col-lg-5">
     <div class="well bs-component">
         <form class="form-horizontal">
             <g:if test="${error}">
@@ -116,6 +114,8 @@
             </fieldset>
         </form>
     </div>
+</div>
+%{--</div>--}%
 </div>
 </div>
 

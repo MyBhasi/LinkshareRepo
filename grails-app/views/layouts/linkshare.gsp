@@ -86,40 +86,44 @@
                     </button>
                 </form>
             </div>
-        </div>
     </nav>
 </div>
 
-<div id="banner">
-    <div class="row">
-        <div class="col-lg-8 col-md-7 col-sm-6">
-            <h1>Admin Panel</h1>
+%{--<div id="banner">--}%
+    %{--<div class="row">--}%
+        %{--<div class="col-lg-8 col-md-7 col-sm-6">--}%
+            %{--<h1>Admin Panel</h1>--}%
             %{--<p class="lead">Light and shadow</p>--}%
-        </div>
+        %{--</div>--}%
         %{--<div class="col-lg-4 col-md-5 col-sm-6">--}%
         %{--<div class="sponsor">--}%
         %{--<script async type="text/javascript" src="https://cdn.carbonads.com/carbon.js?zoneid=1673&amp;serve=C6AILKT&amp;placement=bootswatchcom" id="_carbonads_js"></script>--}%
         %{--</div>--}%
         %{--</div>--}%
-    </div>
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-4">
-            <div class="list-group table-of-contents">
-                <a class="list-group-item" href="index.html#navbar">Home</a>
-                <a class="list-group-item" href="resource">CreateResource</a>
-                <a class="list-group-item" href="index.html#typography">Typography</a>
-                <a class="list-group-item" href="index.html#tables">Tables</a>
-                <a class="list-group-item" href="index.html#forms">Forms</a>
-                <a class="list-group-item" href="index.html#navs">Navs</a>
-                <a class="list-group-item" href="index.html#indicators">Indicators</a>
-                <a class="list-group-item" href="index.html#progress-bars">Progress bars</a>
-                <a class="list-group-item" href="index.html#containers">Containers</a>
-                <a class="list-group-item" href="index.html#dialogs">Dialogs</a>
-            </div>
-        </div>
-    </div>
-</div>
+    %{--</div>--}%
+    %{--<div class="row">--}%
+        %{--<div class="col-lg-3 col-md-3 col-sm-4">--}%
+            %{--<div class="list-group table-of-contents">--}%
+                %{--<a class="list-group-item" href="index.html#navbar">Home</a>--}%
+                %{--<a class="list-group-item" href="${createLink(controller: "topic")}">Create Topic</a>--}%
+                %{--<a class="list-group-item" href="${createLink(controller: "resource")}">CreateResource</a>--}%
+                %{--<a class="list-group-item" href="index.html#typography">Typography</a>--}%
+                %{--<a class="list-group-item" href="index.html#tables">Tables</a>--}%
+                %{--<a class="list-group-item" href="index.html#forms">Forms</a>--}%
+                %{--<a class="list-group-item" href="index.html#navs">Navs</a>--}%
+                %{--<a class="list-group-item" href="index.html#indicators">Indicators</a>--}%
+                %{--<a class="list-group-item" href="index.html#progress-bars">Progress bars</a>--}%
+                %{--<a class="list-group-item" href="index.html#containers">Containers</a>--}%
+                %{--<a class="list-group-item" href="index.html#dialogs">Dialogs</a>--}%
+            %{--</div>--}%
+        %{--</div>--}%
+    %{--</div>--}%
+%{--</div>--}%
 
+
+
+
+%{--<g:render template="/dashboard/sideBar"></g:render>--}%
 
 
 
