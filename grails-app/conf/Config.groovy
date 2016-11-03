@@ -127,6 +127,8 @@ grails.plugin.springsecurity.authority.className = 'com.linkingshare.Role'
 grails.plugin.springsecurity.auth.loginFormUrl = '/landing/index'
 grails.plugin.springsecurity.successHandler.defaultTargetUrl='/admin/postLogin'
 //grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/error'
+grails.plugin.springsecurity.logout.postOnly = false
+
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],

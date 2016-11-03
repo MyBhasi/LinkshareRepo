@@ -6,10 +6,11 @@
     %{--<link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'bootstrap.css')}" type="text/css">--}%
     %{--<link rel="stylesheet" href="${resource(dir: 'css/theme', file: 'custom.min.css')}" type="text/css">--}%
 
-    <asset:javascript src="theme/bootstrap.min.js"/>
-    <asset:javascript src="theme/custom.js"/>
+    %{--<asset:javascript src="theme/bootstrap.min.js"/>--}%
+    %{--<asset:javascript src="theme/custom.js"/>--}%
     <asset:stylesheet href="theme/bootstrap.css"/>
     <asset:stylesheet href="theme/custom.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 
     <g:layoutHead/>
@@ -41,19 +42,30 @@
                                 <li><a href="index.html#">Link</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="index.html#">Link</a></li>
+                                <li><a href="${createLink(controller: "logout")}">Logout</a></li>
                             </ul>
                         </div>
+
                     </div>
                 </nav>
             </div>
 
         </div>
+
+
+
+
     </div>
 </div>
 
-
 <g:layoutBody/>
+%{--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--}%
+%{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>--}%
+%{--<script src="${resource(dir: 'js', file: "jquery.min.js")}"/>--}%
+
+<script src="${resource(dir: 'js/theme', file: "bootstrap.min.js")}"></script>
+<script src="${resource(dir: 'js/theme', file: "custom.js")}"/>
+
 
 </body>
 </html>

@@ -3,7 +3,7 @@ package linkshare
 import com.project.person.Person
 import grails.plugin.springsecurity.annotation.Secured
 
-@Secured('permitAll')
+@Secured(['IS_AUTHENTICATED_FULLY', 'ROLE_ADMIN'])
 class AdminController {
     def springSecurityService
 
