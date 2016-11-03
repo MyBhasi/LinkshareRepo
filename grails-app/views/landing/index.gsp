@@ -141,7 +141,7 @@
 
 
             <div class="form-group">
-                <g:actionSubmit class="btn btn-primary"   action="save" value="${message(code: 'default.button.update.label', default: 'save')}" ></g:actionSubmit>
+                                <g:actionSubmit class="btn btn-primary"   action="save" value="${message(code: 'default.button.update.label', default: 'save')}" ></g:actionSubmit>
                 %{--<input type="submit"  style="width: 100px" value="Register">--}%
                 %{--<button type="submit" class="btn btn-primary" >Submit</button>--}%
       </div>

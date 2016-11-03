@@ -18,9 +18,11 @@ MailService mailService
 
         if(userCO.validate())
         {
-            String m = "/home/anuj/project/photo"
+            String m = "/home/anuj/project/photo/"
+            String  n=file.getOriginalFilename()
+            println(n)
             if(!file.isEmpty()) {
-                file.transferTo(new File(m))
+                file.transferTo(new File(m+n))
             }
 
 String mail=userCO.username
@@ -33,7 +35,7 @@ println "joker"
                 {
                     to mail
                     subject "Welcome! message  from  LinkShare"
-                    body " hi ${userCO.firstName}${userCO.lastName}, you  are  sucessfully Registered.It is  pleasure to you have on board."
+                    body " hi ${userCO.firstName} ${userCO.lastName}, you  are  sucessfully Registered.It is  pleasure to you have on board."
 
 
                 }

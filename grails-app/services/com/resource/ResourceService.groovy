@@ -5,6 +5,7 @@ import com.co.landingForms.LinkResourceCO
 import com.project.linkresource.LinkResource
 import com.project.resource.Resource
 import com.project.documentresource.DocumentResource
+import com.project.topic.Topic
 import grails.transaction.Transactional
 import org.springframework.web.multipart.MultipartFile
 import org.springframework.web.multipart.MultipartHttpServletRequest
@@ -13,8 +14,12 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 class ResourceService {
 
     def addLinkResource(LinkResourceCO linkResourceCO) {
+        println "linkresource Service"
+
         if (linkResourceCO.validate()) {
-            new LinkResource(url: linkResourceCO.url).save(failOnError: true, flush: true)
+
+          Resource resource=  new LinkResource(url: linkResourceCO.url,description: linkResourceCO.description,topic: Topic.findByTopicName(linkResourceCO.topicName))
+              resource.save(failOnError: true, flush: true)
             return true
         } else {
             linkResourceCO.errors.allErrors.each {

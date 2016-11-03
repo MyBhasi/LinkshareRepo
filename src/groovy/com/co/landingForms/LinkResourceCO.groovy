@@ -9,11 +9,13 @@ import grails.validation.Validateable
 class LinkResourceCO {
     String url
     String description
+String topicName
 
 
     static constraints={
         url blank: false
         description maxSize: 30
+        topicName  blank: false,nullable: false
     }
 
 

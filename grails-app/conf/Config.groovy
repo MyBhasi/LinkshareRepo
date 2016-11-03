@@ -125,9 +125,11 @@ log4j.main = {
 grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.linkingshare.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.linkingshare.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.linkingshare.Role'
-grails.plugin.springsecurity.auth.loginFormUrl = '/register/index'
-grails.plugin.springsecurity.successHandler.defaultTargetUrl='/landing/postLogin'
-grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/register/index'
+grails.plugin.springsecurity.auth.loginFormUrl = '/landing/index'
+grails.plugin.springsecurity.successHandler.defaultTargetUrl='/admin/adminPostLogin'
+//grails.plugin.SpringSecurityUtils.securityConfig.logout.filterProcessesUrl='register/index'
+grails.plugin.springsecurity.logout.postOnly=false
+grails.plugin.springsecurity.failureHandler.defaultFailureUrl = '/landing/index'
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/':                ['permitAll'],
 	'/index':           ['permitAll'],
@@ -136,7 +138,9 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	'/**/js/**':        ['permitAll'],
 	'/**/css/**':       ['permitAll'],
 	'/**/images/**':    ['permitAll'],
-	'/**/favicon.ico':  ['permitAll']
+	'/**/favicon.ico':  ['permitAll'],
+    "/console/**":          ['ROLE_ADMIN'],
+    "/plugins/console*/**": ['ROLE_ADMIN'], // Grails 2.x
 ]
 
 grails {
@@ -144,7 +148,7 @@ grails {
         host = "smtp.gmail.com"
         port = 465
         username = "ksubhash970@gmail.com"
-        password = "subhash970"
+        password = ""
         props = ["mail.smtp.auth"                  : "true",
                  "mail.smtp.socketFactory.port"    : "465",
                  "mail.smtp.socketFactory.class"   : "javax.net.ssl.SSLSocketFactory",

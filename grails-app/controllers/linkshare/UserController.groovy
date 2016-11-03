@@ -9,7 +9,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 @Secured('permitAll')
 class UserController {
 RegisterService registerService
-    def index() { }
+    def userPostLogin() { }
     def save(UserCO userCO){
         println "joker"
         MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;
@@ -17,11 +17,11 @@ RegisterService registerService
         boolean flag= registerService.regServiceMethod(userCO,file)
         if(flag)
         {
-            render (view: '/landing/landing')
+            render (view: '/admin/adminPostLogin')
         }
         else {
 
-            render  (view:"/register/index" ,model: [error: "Any field is Left Empty or mismatch password"])
+            render  (view:"/landing/index" ,model: [error: "Any field is Left Empty or mismatch password"])
         }
     }
 }
