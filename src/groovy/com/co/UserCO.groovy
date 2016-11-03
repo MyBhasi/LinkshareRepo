@@ -13,7 +13,7 @@ class UserCO {
     String username
     String password
     String confirmPassword
-    byte [] photo
+    byte  [] photo
 
     static constraints={
         importFrom Person

@@ -19,19 +19,20 @@
     <div class="row">
         <div class="col-lg-6">
             <div class="well bs-component">
+                <legend>Please Login </legend>
                 %{--<form class="form-horizontal" method="POST" action="${resource(file: '/j_spring_security_check')}">--}%
                     %{--<fieldset>--}%
                         %{--<legend>Login</legend>--}%
                         %{--<div class="form-group">--}%
                             %{--<label for="inputEmail" class="col-lg-2 control-label">Email</label>--}%
                             %{--<div class="col-lg-10">--}%
-                                %{--<input type="text"  name='j_username' class="form-control" id="inputEmail" placeholder="Email">--}%
+                                %{--<input type="text"  name="j_username" class="form-control" id="inputEmail" placeholder="Email">--}%
                             %{--</div>--}%
                         %{--</div>--}%
                         %{--<div class="form-group">--}%
                             %{--<label for="inputPassword" class="col-lg-2 control-label">Password</label>--}%
                             %{--<div class="col-lg-10">--}%
-                                %{--<input type="password" class="form-control"  name='j_passsword' id="inputPassword" placeholder="Password">--}%
+                                %{--<input type="password" class="form-control"  name="j_passsword" id="inputPassword" placeholder="Password">--}%
                                 %{--<div class="checkbox">--}%
                                     %{--<label>--}%
                                         %{--<input type="checkbox" value="remember-me"> Remember me--}%
@@ -53,7 +54,6 @@
 
                     %{--</fieldset>--}%
                 %{--</form>--}%
-
                 <form method="POST" action="${resource(file: '/j_spring_security_check')}"
                       class="form-horizontal">
                     <div class="form-group">
@@ -73,20 +73,33 @@
                                              placeholder="Enter password"/>
                         </div>
                     </div>
-
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
                     <div class="form-group">
                         %{--<div class="col-sm-offset-2 col-sm-10">--}%
                         <button type="submit" class="btn btn-default col-sm-2">Login</button>
-                    </div>
-                </form>
 
+                        </div>
+                <label>
+                    <g:link   controller="register" action="forget">
+                        Forget Your Password?
+                    </g:link>
+                </label>
+                </form>
             </div>
         </div>
 
 
         <div class="col-lg-4 col-lg-offset-1" >
             <div class=" well bs-component">
-            <g:form method ="post" class="bs-component"  controller="register" action="reg" >
+                <div class ="form-group-lg">
+                    <g:if test="${error}">
+                        <h1>"${error}"<h1>
+                    </g:if>
+                </div>
+
+            <g:form method ="post" class="bs-component"  enctype="multipart/form-data"  controller="user" action="save" >
                 <legend>Registration</legend>
                 <div class="form-group">
                     <label class="control-label" for="focusedInput">FirstName</label>
@@ -114,10 +127,10 @@
                 </div>
 
 
-                <input class="form-group">
+
                     <label class="control-label" >PhotoUpload</label>
 %{--<g:uploadForm  controller="landing" action="index" >--}%
-<input type="file" name="photo" accept="image*" id="fileupload">
+<input type="file" name="photo"  id="photo"><br>
 %{--<input type="submit" class ="button"  value="upload">--}%
 %{--</g:uploadForm>--}%
 
@@ -128,15 +141,17 @@
 
 
             <div class="form-group">
-
+                                <g:actionSubmit class="btn btn-primary"   action="save" value="${message(code: 'default.button.update.label', default: 'save')}" ></g:actionSubmit>
                 %{--<input type="submit"  style="width: 100px" value="Register">--}%
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                %{--<button type="submit" class="btn btn-primary" >Submit</button>--}%
       </div>
         </g:form>
             </div>
 </div>
 
 </div>
+
+
 <script src="${resource(dir:'js/theme',file:"bootstrap.min.js")}"/>
 <script src="${resource(dir:'js/theme',file:"custom.js")}
 </body>

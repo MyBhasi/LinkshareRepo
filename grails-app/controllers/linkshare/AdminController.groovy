@@ -6,9 +6,8 @@ import grails.plugin.springsecurity.annotation.Secured
 class AdminController {
 
     def index() {}
+@Secured("IS_AUTHENTICATED_FULLY")
+    def adminPostLogin() {
 
-    def postLogin() {
-
-        render(view: "postLogin")
     }
 }
