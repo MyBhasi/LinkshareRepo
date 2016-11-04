@@ -44,7 +44,7 @@
                                     <td>${tl.topicName}</td>
                                     <td>${tl.description}</td>
                                     <td>${tl.visiblility}</td>
-                                    <td><button class="btn-default">Edit</button> </td>
+                                    <td><button class="btn-default"><g:link controller="topic" action="editTopic" params="[topicId:tl.id]">Edit</g:link> </button> </td>
                                     <td><button class="btn-default">Delete</button> </td>
                                 </tr>
                             </g:each>

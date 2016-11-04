@@ -2,7 +2,7 @@
 <body>
 %{--<div class="col-lg-4">--}%
     <div class="well bs-component">
-        <g:form class="form-horizontal" controller="topic" action="createTopic">
+        <g:form class="form-horizontal" params="[topicId:topicId]">
             <fieldset>
                 <legend>Create Topic</legend>
 
@@ -14,7 +14,7 @@
                                name="topicName">
 
                         <div>
-                            <g:hasErrors bean="${err}" field="topicName">
+                            <g:hasErrors bean="${err}">
 
                                 <div class="alert alert-danger">
                                     <button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -40,7 +40,7 @@
 
                     <div class="col-lg-10">
                         <g:select name="visibility" from="${projectEnums.Enums.Visibility.allVisibility()}"
-                                  noSelection="['': 'Select visibility']"></g:select>
+                                  noSelection="['null': 'Select visibility']"></g:select>
 
                         %{--<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>--}%
                     </div>
@@ -49,7 +49,13 @@
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
                         %{--<button type="reset" class="btn btn-default">Cancel</button>--}%
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        %{--<button type="submit" class="btn btn-primary">Submit</button>--}%
+                        <g:if test="${actionName == 'index'}">
+                            <g:actionSubmit value="Submit" action="createTopic"></g:actionSubmit>
+                        </g:if>
+                        <g:else>
+                            <g:actionSubmit value="Update" action="updateTopic"></g:actionSubmit>
+                        </g:else>
                     </div>
                 </div>
             </fieldset>
