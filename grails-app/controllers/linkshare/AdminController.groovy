@@ -8,6 +8,6 @@ class AdminController {
     def index() {}
 @Secured("IS_AUTHENTICATED_FULLY")
     def adminPostLogin() {
-
+flash.message
     }
 }

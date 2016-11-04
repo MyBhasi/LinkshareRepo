@@ -21,11 +21,12 @@ class ResourceService {
         println "linkresource Service"
 println(linkResourceCO.topicName)
        Person person=springSecurityService.getCurrentUser();
-       println person.getClass()
+       println (person)
         if (linkResourceCO.validate()) {
-
+println("joker")
           LinkResource resource=  new LinkResource(url: linkResourceCO.url,description: linkResourceCO.description,topic: Topic.findById(linkResourceCO.topicName),user: person)
               resource.save(failOnError: true, flush: true)
+            print("hi")
             return true
         } else {
             linkResourceCO.errors.allErrors.each {

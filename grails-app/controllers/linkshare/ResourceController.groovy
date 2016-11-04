@@ -2,16 +2,18 @@ package linkshare
 
 import com.co.landingForms.DocumentResourceCO
 import com.co.landingForms.LinkResourceCO
+import com.project.person.Person
+import com.project.resource.Resource
 import com.resource.ResourceService
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.web.multipart.MultipartHttpServletRequest
 @Secured('IS_AUTHENTICATED_FULLY')
 class ResourceController {
+    SpringSecurityService   springSecurityService
 ResourceService  resourceService
-    def index() { }
-    def resource()
-    {
-
+    def index() {
+        render view: "resource"
     }
 
 @Secured('IS_AUTHENTICATED_FULLY')
@@ -19,10 +21,13 @@ ResourceService  resourceService
     {
      println("i  m  here")
 boolean flag=resourceService.addLinkResource(linkResourceCO)
+        println flag
         if(flag) {
-            render view: "/resource/" +
-                    "resource"
+            println("i  m  there")
+            render (view: "resource",model: [error:linkResourceCO])
+
         } else {
+            println("i  m  there")
            render( view:"/resource/resource" ,model: [error:linkResourceCO])
         }
 
@@ -42,6 +47,12 @@ MultipartHttpServletRequest mpr=(MultipartHttpServletRequest)request;
         else {
             render view:"resource",model: [error: documentResourceCO]
         }
+
+    }
+    def showResource()
+    { Person person=springSecurityService.currentUser
+        List<Resource> resourceList=Resource.findAllByUser(person)
+        render(view: "showResource", model: [resourceList:resourceList])
 
     }
 

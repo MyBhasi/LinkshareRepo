@@ -9,6 +9,6 @@ String url
 
     }
     static mapping = {
-        discriminator("link of resource")
+        discriminator("LinkResource")
     }
 }

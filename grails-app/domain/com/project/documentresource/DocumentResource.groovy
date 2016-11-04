@@ -8,6 +8,6 @@ String  filePath
         filePath blank: false
     }
     static mapping = {
-        discriminator("provide document resource ")
+        discriminator("Document Resource")
     }
 }
