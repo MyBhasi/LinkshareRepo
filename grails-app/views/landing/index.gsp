@@ -20,40 +20,7 @@
         <div class="col-lg-6">
             <div class="well bs-component">
                 <legend>Please Login </legend>
-                %{--<form class="form-horizontal" method="POST" action="${resource(file: '/j_spring_security_check')}">--}%
-                    %{--<fieldset>--}%
-                        %{--<legend>Login</legend>--}%
-                        %{--<div class="form-group">--}%
-                            %{--<label for="inputEmail" class="col-lg-2 control-label">Email</label>--}%
-                            %{--<div class="col-lg-10">--}%
-                                %{--<input type="text"  name="j_username" class="form-control" id="inputEmail" placeholder="Email">--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
-                        %{--<div class="form-group">--}%
-                            %{--<label for="inputPassword" class="col-lg-2 control-label">Password</label>--}%
-                            %{--<div class="col-lg-10">--}%
-                                %{--<input type="password" class="form-control"  name="j_passsword" id="inputPassword" placeholder="Password">--}%
-                                %{--<div class="checkbox">--}%
-                                    %{--<label>--}%
-                                        %{--<input type="checkbox" value="remember-me"> Remember me--}%
-                                    %{--</label><br>--}%
-                                    %{--<label>--}%
-                                        %{--<button type="submit"  class="btn btn-primary">Sign In</button>--}%
 
-                                    %{--</label>--}%
-                                    %{--<label>--}%
-                                        %{--<g:link   controller="register" action="forget">--}%
-                                            %{--Forget Password--}%
-                                        %{--</g:link>--}%
-                                    %{--</label>--}%
-                                %{--</div>--}%
-                            %{--</div>--}%
-                        %{--</div>--}%
-
-
-
-                    %{--</fieldset>--}%
-                %{--</form>--}%
                 <form method="POST" action="${resource(file: '/j_spring_security_check')}"
                       class="form-horizontal">
                     <div class="form-group">

@@ -27,7 +27,7 @@ MailService mailService
 
 String mail=userCO.username
 
-           User user = new Person(username: userCO.username,password: userCO.password,firstName: userCO.firstName,lastName: userCO.lastName,photoLocation:m,admin: false).save(failOnError: true)
+           User user = new Person(username: userCO.username,password: userCO.password,firstName: userCO.firstName,lastName: userCO.lastName,photoLocation:m+n,admin: false).save(failOnError: true)
             Role role=Role.findByAuthority("Role_User")
             UserRole.create(user,role,true)
 println "joker"

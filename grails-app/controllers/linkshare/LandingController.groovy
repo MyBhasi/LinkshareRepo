@@ -11,7 +11,7 @@ class LandingController {
 
     def index() {
 
-     render  view: "/landing/dashboard"
+//     render  view: "/landing/dashboard"
     }
 @Secured ('IS_AUTHENTICATED_FULLY')
     def postLogin() {

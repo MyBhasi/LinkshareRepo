@@ -14,7 +14,7 @@ String topicName
 
     static constraints={
         url blank: false
-        description maxSize: 30
+        description maxSize: 70
         topicName  blank: false,nullable: false
     }
 

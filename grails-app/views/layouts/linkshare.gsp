@@ -68,7 +68,7 @@
                                 %{--</sec:ifLoggedIn>--}%
                                 <span class="caret"></span></button>
                             <ul class="dropdown-menu">
-                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Profile</a></li>
                                 <li><a href="${createLink(controller:"logout")}">Logout</a></li>
                                 <li><a href="#">Help</a></li>
                             </ul>
@@ -106,8 +106,8 @@
         <div class="col-lg-3 col-md-3 col-sm-4">
             <div class="list-group table-of-contents">
                 <a class="list-group-item" href="index.html#navbar">Home</a>
-                <a class="list-group-item" href="resource">CreateResource</a>
-                <a class="list-group-item" href="index.html#typography">Typography</a>
+                <a class="list-group-item" href="${createLink(controller:"resource",action: "resource")}">CreateResource</a>
+                <a class="list-group-item" href="${createLink(controller: "topic",action: "index")}">CreateTopic</a>
                 <a class="list-group-item" href="index.html#tables">Tables</a>
                 <a class="list-group-item" href="index.html#forms">Forms</a>
                 <a class="list-group-item" href="index.html#navs">Navs</a>
