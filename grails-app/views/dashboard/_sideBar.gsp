@@ -8,7 +8,7 @@
                 <a class="list-group-item" href="index.html#navbar">Home</a>
                 <a class="list-group-item" href="${createLink(controller: "topic")}">Create Topic</a>
                 <a class="list-group-item" href="${createLink(controller: "resource")}">CreateResource</a>
-                <a class="list-group-item" href="${createLink(controller: "resource")}">Show Topics</a>
+                <a class="list-group-item" href="${createLink(controller: "topic", action: "showTopics")}">Show Topics</a>
                 <a class="list-group-item" href="index.html#typography">Typography</a>
                 <a class="list-group-item" href="index.html#tables">Tables</a>
                 <a class="list-group-item" href="index.html#forms">Forms</a>
