@@ -50,7 +50,8 @@
                                     <td>${rl.domainClass.naturalName}</td>
                                     <td>${rl.description}</td>
                                     <td>${rl.topic.topicName}</td>
-                                    <td><button class="btn-default">Edit</button> </td>
+
+                                    <td><g:link controller="resource" action="editResource" params="[resource:rl.domainClass.naturalName]" >Edit</g:link></td>
                                     <td><button class="btn-default">Delete</button> </td>
                                 </tr>
                             </g:each>

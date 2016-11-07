@@ -15,9 +15,6 @@
     <div class="row">
         <div class="col-md-3">
             <g:render template="/dashboard/sideBar"></g:render>
-            #userFirstName{
-            xyz
-            }
 
         </div>
     </div>

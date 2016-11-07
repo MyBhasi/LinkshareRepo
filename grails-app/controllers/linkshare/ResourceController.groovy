@@ -16,6 +16,22 @@ ResourceService  resourceService
         render view: "resource"
     }
 
+
+    def editResource()
+    {
+println  params.resource
+    }
+
+    def  linkUpdate(LinkResourceCO linkResourceCO)
+    {
+
+    }
+
+    def documentUpdate()
+    {
+
+    }
+
 @Secured('IS_AUTHENTICATED_FULLY')
     def saveLinkResource(LinkResourceCO linkResourceCO)
     {

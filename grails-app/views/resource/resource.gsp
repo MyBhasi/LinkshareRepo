@@ -28,7 +28,7 @@
                     <label for="inputEmail" class="col-lg-2 control-label">Link* </label>
 
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Link"
+                        <input type="text" class="form-control" id="inputEmail"    placeholder="Link"
                                name="url">
                     </div>
                 </div>
