@@ -2,6 +2,7 @@ package linkshare
 
 import com.co.UserCO
 import com.regservice.RegisterService
+import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.web.multipart.MultipartFile
 import org.springframework.web.multipart.MultipartHttpServletRequest
@@ -10,6 +11,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 class UserController {
 RegisterService registerService
     def userPostLogin() { }
+
     def save(UserCO userCO){
         println "joker"
         MultipartHttpServletRequest mpr = (MultipartHttpServletRequest)request;
@@ -17,6 +19,7 @@ RegisterService registerService
         boolean flag= registerService.regServiceMethod(userCO,file)
         if(flag)
         {
+            
             render (view: '/admin/adminPostLogin')
         }
         else {

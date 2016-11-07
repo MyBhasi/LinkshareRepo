@@ -18,7 +18,7 @@ MailService mailService
 
         if(userCO.validate())
         {
-            String m = "/home/anuj/project/photo/"
+            String m = "/home/ashish/newProj/photo/"
             String  n=file.getOriginalFilename()
             println(n)
             if(!file.isEmpty()) {
@@ -31,14 +31,15 @@ String mail=userCO.username
             Role role=Role.findByAuthority("Role_User")
             UserRole.create(user,role,true)
 println "joker"
-            mailService.sendMail
-                {
-                    to mail
-                    subject "Welcome! message  from  LinkShare"
-                    body " hi ${userCO.firstName} ${userCO.lastName}, you  are  sucessfully Registered.It is  pleasure to you have on board."
+//            mailService.sendMail
+//                {
+//                    to mail
+//                    subject "Welcome! message  from  LinkShare"
+//                    body " hi ${userCO.firstName} ${userCO.lastName}, you  are  sucessfully Registered.It is  pleasure to you have on board."
+//
+//
+//                }
 
-
-                }
 
 
             return true}

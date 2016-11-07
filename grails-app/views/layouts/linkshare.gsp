@@ -1,16 +1,8 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: flanker
-  Date: 23/10/16
-  Time: 9:06 PM
---%>
-
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title><g:layoutTitle /></title>
-    <asset:javascript src="theme/bootstrap.min.js"/>
-    <asset:javascript src="theme/custom.js"/>
+
     <asset:stylesheet href="theme/bootstrap.css"/>
     <asset:stylesheet href="theme/custom.min.css"/>
     <script  src="${resource(dir: 'js', file: 'jquery.min.js')}"></script>
@@ -19,6 +11,14 @@
     <g:layoutHead/>
 </head>
 <body >
+
+%{--<div>--}%
+%{--<sec:ifLoggedIn>--}%
+
+%{--<p> <sec:username/> </p>--}%
+%{--</sec:ifLoggedIn>--}%
+%{--</div>  --}%
+
 <div class="bs-component">
     <nav class="navbar navbar-default   navbar-fixed-top">
         <div class="container-fluid">
@@ -66,7 +66,12 @@
                                 %{--<sec:ifLoggedIn>--}%
                                  %{--${user.firstName}--}%
                                 %{--</sec:ifLoggedIn>--}%
-                                <span class="caret"></span></button>
+                                <span class="caret"></span>
+
+
+                                %{--<sec:username/>--}%
+                                %{--<img src="${createLink(controller: "dashboard", action: "showPhoto")}"/>--}%
+                            </button>
                             <ul class="dropdown-menu">
                                 <li><a href="#">Setting</a></li>
                                 <li><a href="${createLink(controller:"logout")}">Logout</a></li>
@@ -74,7 +79,7 @@
                             </ul>
                         </div>
 
-                </div>
+        </div>
                 <form class="navbar-form navbar-left"   action="#" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control" placeholder="Search">
@@ -88,6 +93,13 @@
             </div>
     </nav>
 </div>
+
+%{--<div>--}%
+    %{--<sec:ifLoggedIn>--}%
+
+        %{--<p><sec:username/></p>--}%
+    %{--</sec:ifLoggedIn>--}%
+%{--</div>--}%
 
 %{--<div id="banner">--}%
     %{--<div class="row">--}%
@@ -128,6 +140,9 @@
 
 
 <g:layoutBody/>
+
+<asset:javascript src="theme/bootstrap.min.js"/>
+<asset:javascript src="theme/custom.js"/>
 
 </body>
 </html>

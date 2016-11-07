@@ -93,11 +93,11 @@
 
         <div class="col-lg-4 col-lg-offset-1" >
             <div class=" well bs-component">
-                <div class ="form-group-lg">
-                    <g:if test="${error}">
-                        <h1>"${error}"<h1>
-                    </g:if>
-                </div>
+                %{--<div class ="form-group-lg">--}%
+                    %{--<g:if test="${error}">--}%
+                        %{--<h1>"${error}"<h1>--}%
+                    %{--</g:if>--}%
+                %{--</div>--}%
 
             <g:form method ="post" class="bs-component"  enctype="multipart/form-data"  controller="user" action="save" >
                 <legend>Registration</legend>
