@@ -2,6 +2,8 @@ import com.linkingshare.Role
 import com.linkingshare.User
 import com.linkingshare.UserRole
 import com.project.person.Person
+import com.project.topic.Topic
+import projectEnums.Enums
 
 class BootStrap {
 
@@ -31,6 +33,10 @@ class BootStrap {
         if (!userUser.authorities.contains(userRole)) {
             UserRole.create(userUser, userRole, true)
         }
+        Topic topic=Topic.findOrSaveWhere(description: "single body of written works",topicName: "literature",visiblility: Enums.Visibility.PUBLIC,createdbyUser:adminUser1 )
+        Topic topic1=Topic.findOrSaveWhere(description: "java plateform dependent language",topicName: "Groovy",visiblility: Enums.Visibility.PUBLIC,createdbyUser:adminUser )
+
+
     }
     def destroy = {
     }

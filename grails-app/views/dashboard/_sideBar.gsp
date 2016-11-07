@@ -9,7 +9,7 @@
                 <a class="list-group-item" href="${createLink(controller: "topic")}">Create Topic</a>
                 <a class="list-group-item" href="${createLink(controller: "resource")}">CreateResource</a>
                 <a class="list-group-item" href="${createLink(controller: "topic", action: "showTopics")}">Show Topics</a>
-                <a class="list-group-item" href="index.html#typography">Typography</a>
+                <a class="list-group-item" href="${createLink(controller: "resource",action: "showResource")}">ShowResources</a>
                 <a class="list-group-item" href="index.html#tables">Tables</a>
                 <a class="list-group-item" href="index.html#forms">Forms</a>
                 <a class="list-group-item" href="index.html#navs">Navs</a>

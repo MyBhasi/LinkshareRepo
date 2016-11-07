@@ -8,10 +8,11 @@ import grails.validation.Validateable
 @Validateable
 class DocumentResourceCO {
     String description
-    byte[] document
+  String  topicName
 
     static constraints={
         description maxSize: 30
-        document nullable: false
+        topicName blank: false  ,nullable: false
+
     }
 }

@@ -28,8 +28,8 @@
                     <label for="inputEmail" class="col-lg-2 control-label">Link* </label>
 
                     <div class="col-lg-10">
-                        <input type="text" class="form-control" id="inputEmail" placeholder="Link"
-                               name="topicName">
+                        <input type="text" class="form-control" id="inputEmail"    placeholder="Link"
+                               name="url">
                     </div>
                 </div>
 
@@ -67,10 +67,8 @@
 %{--<div class="row">--}%
 <div class="col-lg-5 col-lg-5">
     <div class="well bs-component">
-        <form class="form-horizontal">
-            <g:if test="${error}">
-                "${error}"
-            </g:if>
+        <g:form class="form-horizontal"  enctype="multipart/form-data"  >
+
             <fieldset>
                 <legend>Share Document</legend>
 
@@ -80,7 +78,7 @@
 
                     <div class="col-lg-10">
                         <input type="text" class="form-control" id="inputEmail1" placeholder="Document"
-                               name="topicName">
+                               name="documentName">
                         <input type="file"  name="document">
                     </div>
                 </div>
@@ -98,7 +96,7 @@
                     <label for="textArea" class="col-lg-2 control-label">Topic</label>
 
                     <div class="col-lg-10">
-                        <g:select name="topic" from="${Topic.list()}" optionKey="id"
+                        <g:select name="topicName" from="${Topic.list()}" optionKey="id"
                                   optionValue="topicName" noSelection="['': 'ChooseTopic']"></g:select>
 
                         %{--<span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>--}%
@@ -107,12 +105,12 @@
 
                 <div class="form-group">
                     <div class="col-lg-10 col-lg-offset-2">
-                        %{--<button type="reset" class="btn btn-default">Cancel</button>--}%
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        %{--<button type="submit" class="btn btn-default">submit</button>--}%
+                        <g:actionSubmit class="btn btn-primary" action="saveDocumentResource"  value="${message(code: 'default.button.update.label', default: 'save')}" ></g:actionSubmit>
                     </div>
                 </div>
             </fieldset>
-        </form>
+        </g:form>
     </div>
 </div>
 %{--</div>--}%

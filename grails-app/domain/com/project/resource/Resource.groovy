@@ -8,7 +8,7 @@ import com.project.topic.Topic
 class Resource {
     String description
     Date dateCreated
-    Date dateUpdataed
+    Date lastUpdated
     Topic topic
     static hasMany = [readingitems: ReadingItem]
     static belongsTo = [user: Person]

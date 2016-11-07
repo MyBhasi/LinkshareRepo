@@ -53,9 +53,9 @@
                         <g:if test="${actionName == 'index'}">
                             <g:actionSubmit value="Submit" action="createTopic"></g:actionSubmit>
                         </g:if>
-                        <g:else>
+                        <g:elseif test="${actionName=="editTopic"}">
                             <g:actionSubmit value="Update" action="updateTopic"></g:actionSubmit>
-                        </g:else>
+                        </g:elseif>
                     </div>
                 </div>
             </fieldset>

@@ -24,7 +24,7 @@ RegisterService registerService
         }
         else {
 
-            render  (view:"/landing/index" ,model: [error: "Any field is Left Empty or mismatch password"])
+            render  (view:"/landing/index" ,model: [error:userCO])
         }
     }
 }

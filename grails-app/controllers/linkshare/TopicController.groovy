@@ -35,12 +35,12 @@ class TopicController {
     }
 
     def editTopic() {
-
+println "bye"
         [topicId: params.topicId]
     }
 
     def updateTopic(TopicCO topicCO) {
-
+ println ("update")
         if (!Topic.findByTopicName(topicCO.topicName)) {
             if (topicCO.validate()) {
                 Topic topic = Topic.findById(params.topicId)
