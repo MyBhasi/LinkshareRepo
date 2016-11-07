@@ -27,9 +27,9 @@ class Topic {
         subscriptions cascade: 'delete'
     }
 
-    public static def recentTopicsAdmin() {
+    public static List<Topic> recentTopicsAdmin() {
         def c = Topic.createCriteria()
-        def results = c.list {
+        List<Topic> results = c.list {
             order("dateCreated", "desc")
             maxResults 5
         }

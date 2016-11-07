@@ -5,7 +5,7 @@
         <nav class="navbar navbar-default navbar-fixed-side">
             <!-- normal collapsible navbar markup -->
             <div class="list-group table-of-contents">
-                <a class="list-group-item" href="index.html#navbar">Home</a>
+                <a class="list-group-item" href="${createLink(controller: "admin", action: "adminPostLogin")}">Home</a>
                 <a class="list-group-item" href="${createLink(controller: "topic")}">Create Topic</a>
                 <a class="list-group-item" href="${createLink(controller: "resource")}">CreateResource</a>
                 <a class="list-group-item" href="${createLink(controller: "topic", action: "showTopics")}">Show Topics</a>

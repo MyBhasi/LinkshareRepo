@@ -47,7 +47,7 @@
 
         <div class="col-md-6">
             <g:if test="${com.project.topic.Topic.recentDocumentResourcesAdmin()}">
-                <h2 align="center">Recent Link Resources</h2>
+                <h2 align="center">Recent Document Resources</h2>
 
             %{--<div class="bs-component">--}%
                 <g:each in="${com.project.topic.Topic.recentDocumentResourcesAdmin()}" var="rdrl">

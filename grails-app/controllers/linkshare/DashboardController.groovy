@@ -13,6 +13,9 @@ import com.project.topic.Topic
 import grails.plugin.springsecurity.annotation.Secured
 import org.springframework.web.multipart.MultipartHttpServletRequest
 
+import javax.imageio.ImageIO
+import java.awt.image.BufferedImage
+
 @Secured('IS_AUTHENTICATED_FULLY')
 class DashboardController {
     SpringSecurityService springSecurityService
@@ -30,39 +33,26 @@ class DashboardController {
         }
     }
 
-//    def showPhoto() {
-//        Person person=springSecurityService.currentUser
-//        MultipartHttpServletRequest mpr=(MultipartHttpServletRequest)request
-//        def uploadFile = mpr.getFile(person.photoLocation)
-//        response.outputStream << uploadFile.bytes
-//        return response.outputStream
-//    }
+    def renderImage = {
 
-//    def recentTopicsAdmin() {
-//        def c = Topic.createCriteria()
-//        List<Topic> results = c.list {
-//            order("dateCreated", "desc")
-//            maxResults 5
-//        }
-//        println results
-//        render(view: "/admin/adminPostLogin", model: [recentTL: results])
-//    }
+//        String profileImagePath = "/home/ashish/newProj/photo/"
 
-//    def recentLinkResourcesAdmin() {
-//        def c = LinkResource.createCriteria()
-//        List<LinkResource> results = c.list(max: 5) {
-//            order("dateCreated", "desc")
-//        }
-//        println results
-//        render(view: "/admin/adminPostLogin", model: [recentLRL: results])
-//    }
+//String profileImagePath = grailsApplication.grails.profile.images.path
 
-//    def recentDocumentResourcesAdmin() {
-//        def c = DocumentResource.createCriteria()
-//        List<DocumentResource> results = c.list(max: 5) {
-//            order("dateCreated", "desc")
-//        }
-//        println results
-//        render(view: "/admin/adminPostLogin", model: [recentDRL: results])
-//    }
+//        String  image = 'bhai_jaan.png' // or whatever name you saved in your db
+////        ByteArrayOutputStream baos=new ByteArrayOutputStream();
+//        File imageFile =new File(Person.get(4).photoLocation)
+//        println ("hieiiii 111")
+//render (imageFile:"${imageFile}" , contentType: "image/png")
+        Person person=(springSecurityService.currentUser)
+        def file = new File(person.photoLocation)
+        def img = file.bytes
+        response.contentType = 'image/png' // or the appropriate image content type
+        response.outputStream << img
+        response.outputStream.flush()
+
+
+
+
+    }
 }
