@@ -41,13 +41,13 @@ println("joker")
         if (documentResourceCO.validate()&&!(file.empty)) {
             println("hi")
             Person person=springSecurityService.getCurrentUser();
-            String m = "/home/anuj/project/document/"
+            String m = "/home/ashish/newProj/document/"
           String s=file.getOriginalFilename()
             println(s)
 
             file.transferTo(new File(m+s))
 
-           Resource resource= new DocumentResource(filePath: m+s,description: documentResourceCO.description,topic:Topic.findById(documentResourceCO.topicName),user: person ).save(failOnError: true, flush: true)
+           Resource resource= new DocumentResource(filePath: m+s,description: documentResourceCO.description,topic:Topic.findById(documentResourceCO.topicName),user: person, docName: s ).save(failOnError: true, flush: true)
             return true
         } else {
             documentResourceCO.errors.allErrors.each {

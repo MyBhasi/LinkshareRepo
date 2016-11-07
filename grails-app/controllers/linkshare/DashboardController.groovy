@@ -1,5 +1,6 @@
 package linkshare
 
+import com.project.documentresource.DocumentResource
 import com.project.person.Person
 import grails.plugin.springsecurity.SpringSecurityService
 import grails.plugin.springsecurity.annotation.Secured
@@ -37,21 +38,31 @@ class DashboardController {
 //        return response.outputStream
 //    }
 
-    def recentTopicsAdmin() {
-        def c = Topic.createCriteria()
-        List<Topic> results = c.list {
-            order("dateCreated", "desc")
-            maxResults 5
-        }
-        println results
-        render(view: "/admin/adminPostLogin", model: [recentTL: results])
-    }
+//    def recentTopicsAdmin() {
+//        def c = Topic.createCriteria()
+//        List<Topic> results = c.list {
+//            order("dateCreated", "desc")
+//            maxResults 5
+//        }
+//        println results
+//        render(view: "/admin/adminPostLogin", model: [recentTL: results])
+//    }
 
-    def recentResourcesAdmin() {
-        def c = LinkResource.createCriteria()
-        def results = c.list(max: 5) {
-            order("dateCreated")
-        }
-        println results
-    }
+//    def recentLinkResourcesAdmin() {
+//        def c = LinkResource.createCriteria()
+//        List<LinkResource> results = c.list(max: 5) {
+//            order("dateCreated", "desc")
+//        }
+//        println results
+//        render(view: "/admin/adminPostLogin", model: [recentLRL: results])
+//    }
+
+//    def recentDocumentResourcesAdmin() {
+//        def c = DocumentResource.createCriteria()
+//        List<DocumentResource> results = c.list(max: 5) {
+//            order("dateCreated", "desc")
+//        }
+//        println results
+//        render(view: "/admin/adminPostLogin", model: [recentDRL: results])
+//    }
 }
