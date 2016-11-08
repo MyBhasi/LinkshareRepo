@@ -62,28 +62,6 @@ println "bye"
             render(view: "/topic/editTopic", model: [err: topicCO])
         }
 
-//        Topic topic=Topic.findById(params.topicId)
-//        if (topic) {
-//            topic.topicName = params.topicName
-//            topic.description = params.description
-//            topic.visiblility = params.visibility
-//
-//            if (!Topic.findByTopicName(topic.topicName)) {
-//                if (topic.validate()) {
-//                    topic.save(flush: true, failOnError: true)
-//                } else {
-//                    topic.errors.allErrors.each { err ->
-//                        println(err)
-//                        render(view: "/topic/editTopic", model: [err: topic])
-//                    }
-//                }
-//            } else {
-//                println("Topic already created")
-//            }
-//        }
-//        else {
-//            render(view:"/topic/editTopic", model: [err:topic] )
-//        }
     }
 
 
