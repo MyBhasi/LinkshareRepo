@@ -18,7 +18,7 @@ MailService mailService
 
         if(userCO.validate())
         {
-            String m = "/home/ashish/newProj/photo/"
+            String m = "/home/anuj/project/photo/"
             String  n=file.getOriginalFilename()
 
             println(n)
