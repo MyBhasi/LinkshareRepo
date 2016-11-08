@@ -35,24 +35,11 @@ class DashboardController {
 
     def renderImage = {
 
-//        String profileImagePath = "/home/ashish/newProj/photo/"
-
-//String profileImagePath = grailsApplication.grails.profile.images.path
-
-//        String  image = 'bhai_jaan.png' // or whatever name you saved in your db
-////        ByteArrayOutputStream baos=new ByteArrayOutputStream();
-//        File imageFile =new File(Person.get(4).photoLocation)
-//        println ("hieiiii 111")
-//render (imageFile:"${imageFile}" , contentType: "image/png")
         Person person=(springSecurityService.currentUser)
         def file = new File(person.photoLocation)
         def img = file.bytes
-        response.contentType = 'image/png' // or the appropriate image content type
+        response.contentType = 'image/jpg' // or the appropriate image content type
         response.outputStream << img
-        response.outputStream.flush()
-
-
-
-
+       // response.outputStream.flush()
     }
 }

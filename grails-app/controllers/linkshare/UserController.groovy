@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest
 
 @Secured('permitAll')
 class UserController {
+    def springSecurityService
 RegisterService registerService
     def userPostLogin() { }
 
@@ -19,7 +20,7 @@ RegisterService registerService
         boolean flag= registerService.regServiceMethod(userCO,file)
         if(flag)
         {
-            
+            springSecurityService.reauthenticate(userCO.username)
             render (view: '/admin/adminPostLogin')
         }
         else {

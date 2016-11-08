@@ -9,7 +9,6 @@ import com.project.topic.Topic
 
 class Person extends User {
     String firstName
-    byte[] photo
     String lastName
     Date dateCreated
     Date lastUpdated
@@ -27,7 +26,5 @@ class Person extends User {
                 return false
             }
         }
-        photo nullable: true
-
     }
 }
