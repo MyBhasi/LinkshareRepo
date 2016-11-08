@@ -71,6 +71,7 @@
                                  ${Person.get(sec.loggedInUserInfo(field: 'id')).firstName}
 
                                 </sec:ifLoggedIn>
+
                                 <span class="caret"></span></img> </button>
                             <ul class="dropdown-menu">
                                 <li><a href="#">profile</a></li>

@@ -47,7 +47,7 @@ class DashboardController {
         Person person=(springSecurityService.currentUser)
         def file = new File(person.photoLocation)
         def img = file.bytes
-        response.contentType = 'image/png' // or the appropriate image content type
+        response.contentType='image/*' // or the appropriate image content type
         response.outputStream << img
         response.outputStream.flush()
 

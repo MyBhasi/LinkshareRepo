@@ -41,7 +41,7 @@ println("joker")
         if (documentResourceCO.validate()&&!(file.empty)) {
             println("hi")
             Person person=springSecurityService.getCurrentUser();
-            String m = "/home/ashish/newProj/document/"
+            String m = "/home/anuj/project/document/"
           String s=file.getOriginalFilename()
             println(s)
 

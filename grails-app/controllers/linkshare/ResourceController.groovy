@@ -2,6 +2,7 @@ package linkshare
 
 import com.co.landingForms.DocumentResourceCO
 import com.co.landingForms.LinkResourceCO
+import com.project.documentresource.DocumentResource
 import com.project.person.Person
 import com.project.resource.Resource
 import com.resource.ResourceService
@@ -19,7 +20,7 @@ ResourceService  resourceService
 
     def editResource()
     {
-println  params.resource
+
     }
 
     def  linkUpdate(LinkResourceCO linkResourceCO)
@@ -72,4 +73,15 @@ MultipartHttpServletRequest mpr=(MultipartHttpServletRequest)request;
 
     }
 
+    def  downloadDocument(int  id) {
+        String s=DocumentResource.get(id).filePath
+        println s
+        def file = new File(s)
+        response.setHeader "Content-disposition", "attachment; filename=${DocumentResource.get(id).docName}"
+        response.setHeader("Content-Length", "file-size")
+        response.setContentType("file-mime-type")
+        def contentStream = file.newInputStream()
+        response.outputStream << contentStream
+        webRequest.renderView = false
+    }
 }
